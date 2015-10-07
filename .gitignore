@@ -1,3 +1,9 @@
+# igpt created files
+index.html
+data.json
+grid.*
+plice_inct_*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
