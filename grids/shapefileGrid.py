@@ -1,13 +1,16 @@
 # coding: utf-8
+from collections import namedtuple
+import json
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.path as pathtools
-from collections import namedtuple
 import shapefile
-import json
-import os
 
-def main(inputShp,degStep=0.005,makeShpFile=True,return_data=False):
+def main():
+    print('Ran main')    
+
+def shapefileGrid(inputShp,degStep=0.005,makeShpFile=True,return_data=False):
     gridData = gridDataGen(inputShp,degStep)
     if makeShpFile:
         center = makeShapeFile(gridData)

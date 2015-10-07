@@ -4,7 +4,7 @@ import folium
 import pandas as pd
 from os.path import splitext
 
-def main(files,data_info='default', map_opts='default',serve_files=False):
+def mapGenerator(files,data_info='default', map_opts='default',serve_files=False):
 
     createMap(files,data_info, map_opts)
 
@@ -56,8 +56,8 @@ def createMap(files,data_info='default', map_opts='default'):
     # If Shapefile is .shp, convert it
     root,ext = splitext(geo_file)
     if ext == '.shp':
-        from igpt import shapefileGrid
-        shapefileGrid.shp2GeoJson(geo_file)
+        from igpt import shp2GeoJson
+        shp2GeoJson(geo_file)
         geo_file = root+'.json'
         
     # Make Sure Name is .html

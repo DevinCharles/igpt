@@ -5,8 +5,8 @@ import shapefile
 import os
 #from pyproj import Proj
 
-def main(datafile,latcol,loncol,shpfile,ID,frequency=False):
-    filename,column,data_size = blockIndexer(datafile,latcol,loncol,shpfile,ID)
+def blockIndexer(datafile,latcol,loncol,shpfile,ID,frequency=False):
+    filename,column,data_size = numberCruncher(datafile,latcol,loncol,shpfile,ID)
     columns = (column,'')
     if frequency:
         filename,columns = freqFileGen(filename,column)
@@ -43,7 +43,7 @@ def dfUpdater(indexes,id_list):
     shape_id = id_list[indexes[1]]
     return [row,shape_id]
 
-def blockIndexer(datafile,latcol,loncol,shpfile,ID):
+def numberCruncher(datafile,latcol,loncol,shpfile,ID):
     # File Roots and Extensions
     root,ext = os.path.splitext(datafile)
     sfroot,sfext = os.path.splitext(shpfile)

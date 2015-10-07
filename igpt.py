@@ -9,9 +9,9 @@ standard_library.install_aliases()
 import sys
 import getopt
 
-from grids import shapefileGrid
-from grids import blockIndexer
-from examples import mapGenerator
+from grids.shapefileGrid import *
+from grids.blockIndexer import *
+from examples.mapGenerator import *
 from examples.examples import grids_example
 
 def main():

@@ -3,7 +3,7 @@ from igpt import shapefileGrid,blockIndexer,mapGenerator
 def grids_example():
     # Open the Outline of Philadelphia Shapefile, Create grid with Defaults, Make the New Shapefile
     shpfile = r'examples/ex_grids/shapefiles/Philadelphia_City_Limits.json'
-    gridData = shapefileGrid.main(shpfile,return_data=True)
+    gridData = shapefileGrid(shpfile,return_data=True)
 
     center = gridData.center
 
@@ -22,7 +22,7 @@ def grids_example():
     ID = 'id'
 
     # Adding Frequency=True generates the histogram data (number of events per block)
-    datafile,data_columns,data_size = blockIndexer.main(datafile,latcol,loncol,shpfile,ID,frequency=True)
+    datafile,data_columns,data_size = blockIndexer(datafile,latcol,loncol,shpfile,ID,frequency=True)
 
     # Create the Map and Serve the Files
     color = 'YlOrBr'
@@ -36,7 +36,7 @@ def grids_example():
     print('Data Size:\t',data_size)
 
     try:
-        mapGenerator.main(files,data_info,map_opts,serve_files=True)
+        mapGenerator(files,data_info,map_opts,serve_files=True)
     except (KeyboardInterrupt, SystemExit):
         raise
 
