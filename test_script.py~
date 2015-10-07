@@ -1,2 +1,0 @@
-gridData = gridDataGen(r'City_Limits.json',degStep=0.001)
-makeShapeFile(gridData)
