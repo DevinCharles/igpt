@@ -7,8 +7,8 @@ So far only the shapefileGrid and blockIndexer tools exist. The first will break
 
 While block indexer was written for the shapefileGrid output, but it has the ability to read any group of shapefiles and index any lat, lon containing data set, however it currently only uses the bounding boxes of the shapes, which helps give it it's speed (*in the example it checks 52k events agains ~9000 shapefiles in a few seconds, that's 468 million combinations*). In the near future it will have a switch for non-grid shapefiles that will use mpl.path which should give better results for irregular shapes. The next step to speed up even larger data sets will be to use self organizing maps, but that's some time out still.
 
-##isoShapes
-This is the next planed tool for the toolkit, creating isoplot like shapefiles indexed with block indexer to show where things happen. Shapes could be filled or given colored lines (maybe?) to show as isolines.
+##contourShapes
+This is the next planed tool for the toolkit, [creating contour-plot](http://matplotlib.org/examples/pylab_examples/contour_demo.html) like shapefiles indexed with block indexer to show where things happen. Shapes could be filled or given colored lines (maybe?) to show as contour lines.
 
 ##findShapeFiles
 This will be a tool to help find shapefiles using natural language lookups. Maybe.
@@ -18,6 +18,8 @@ Same idea for datasets. Same maybe.
 
 ##Examples
 #### Shapefile Grids
-`from igpt import grids_example`
-`# "Create a Low Density" grid`
-`grids_example('low')`
+```
+from igpt import grids_example
+# "Create a Low Density" grid
+grids_example('low')
+```
