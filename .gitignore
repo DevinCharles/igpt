@@ -4,10 +4,12 @@ data.json
 grid.*
 plice_inct_*
 
+# Temp Files
+*~
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*.py~
 
 # C extensions
 *.so
